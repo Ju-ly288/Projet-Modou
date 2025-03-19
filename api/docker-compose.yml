@@ -1,0 +1,21 @@
+services:
+  api:
+    build: ./api
+    volumes:
+      - ./api/app:/code/app
+    ports:
+      - 8080:80
+    env_file:
+      - ./api/.env
+    environment:
+      DATABASE_URL: ${DATABASE_URL}
+    networks:
+      - pizzas-ntwrk
+    develop:
+      watch:
+        - path: ./api
+          action: rebuild
+          target: /code
+networks:
+  pizzas-ntwrk:
+    driver: bridge

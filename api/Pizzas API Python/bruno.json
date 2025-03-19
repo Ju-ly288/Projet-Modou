@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "Pizzas API Python",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

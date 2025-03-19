@@ -1,0 +1,24 @@
+meta {
+  name: Update One Pizza by Id
+  type: http
+  seq: 5
+}
+
+put {
+  url: http://localhost:8080/pizzas/1
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "id":1,
+    "name": "Margherita",
+    "ingredients": "Mozzarella, Basilic",
+    "price": 7
+  }
+}
+
+assert {
+  res.status: eq 200
+}
